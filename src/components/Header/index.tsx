@@ -1,7 +1,8 @@
 import { HeaderContainer } from './styles'
 
 import logoCoffe from '../../assets/Logo.svg'
-import { ShoppingCart, MapPin } from 'phosphor-react'
+import MapPin from '../../assets/MapPin.svg'
+import Cart from '../../assets/Cart.svg'
 
 export function Header() {
   return (
@@ -9,10 +10,10 @@ export function Header() {
       <img src={logoCoffe} alt="logo coffe" />
       <nav>
         <div>
-          <MapPin size={32} />
+          <img src={MapPin} alt="" />
           Brasília, DF
         </div>
-        <ShoppingCart size={32} />
+        <img src={Cart} alt="" />
       </nav>
     </HeaderContainer>
   )
