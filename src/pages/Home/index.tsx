@@ -45,10 +45,19 @@ export function Home() {
         </div>
         <img src={CoffeImg} alt="Imagem de um café na embalagem da loja" />
       </div>
-
-      <h1>Nossos cafés</h1>
-
-      <CardCoffe />
+      <h1 className="SubTitle">Nossos cafés</h1>
+      <div className="products">
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+        <CardCoffe />
+      </div>
     </HomeContainer>
   )
 }

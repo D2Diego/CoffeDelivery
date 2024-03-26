@@ -1,5 +1,4 @@
 import { FaMinus, FaPlus } from 'react-icons/fa6'
-// import { IoCartOutline } from 'react-icons/io5'
 
 import CupCoffe from '../../assets/CupCoffe.svg'
 
@@ -9,7 +8,11 @@ import ShopCar from '../../assets/shopping-cart-simple.svg'
 export function CardCoffe() {
   return (
     <CardCoffeContainer>
-      <img src={CupCoffe} className="product-img" />
+      <img
+        src={CupCoffe}
+        alt="Imagem do produto café"
+        className="product-img"
+      />
       <div className="coffee-tag">Tradicional</div>
       <h3>Expresso Tradicional</h3>
       <p>O tradicional café feito com água quente e grãos moídos</p>

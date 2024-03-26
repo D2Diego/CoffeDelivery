@@ -7,6 +7,8 @@ export const HomeContainer = styled.nav`
   }
 
   .container-title h1 {
+    color: ${(props) => props.theme['base-title']};
+
     font-family: 'Baloo 2';
     font-size: 48px;
     font-weight: 800;
@@ -16,10 +18,25 @@ export const HomeContainer = styled.nav`
   .container-title p {
     color: ${(props) => props.theme['base-subtitle']};
 
-    /* Text/Regular L */
     font-family: Roboto;
     font-size: 25px;
     margin-bottom: 75px;
+  }
+
+  .SubTitle {
+    color: ${(props) => props.theme['base-subtitle']};
+    font-family: 'Baloo 2';
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 142px;
+    margin-bottom: 52px;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 32px;
+    column-gap: 40px;
   }
 `
 export const Section = styled.section`

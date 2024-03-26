@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const CardCoffeContainer = styled.article`
   max-width: 256px;
-  max-height: 310px;
-  padding: 20px;
+  height: 326px;
+  padding: 24px 24px;
   border-radius: 6px 36px;
   background: var(--Base-Card, #f3f2f2);
 
@@ -22,11 +22,10 @@ export const CardCoffeContainer = styled.article`
 
     font-family: Roboto;
     font-size: 10px;
-    font-style: normal;
     font-weight: 700;
     text-transform: uppercase;
 
-    padding: 0 8px;
+    padding: 8px;
     border-radius: 100px;
     background: var(--Brand-Yellow-Light, #f1e9c9);
 
@@ -39,7 +38,6 @@ export const CardCoffeContainer = styled.article`
 
     font-family: 'Baloo 2';
     font-size: 20px;
-    font-style: normal;
     font-weight: 700;
     line-height: 130%;
     margin-bottom: 8px;
@@ -51,7 +49,6 @@ export const CardCoffeContainer = styled.article`
 
     font-family: Roboto;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 130%;
 
@@ -63,7 +60,6 @@ export const CardCoffeContainer = styled.article`
     text-align: right;
     font-family: Roboto;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 130%;
   }
@@ -73,23 +69,22 @@ export const CardCoffeContainer = styled.article`
 
     font-family: 'Baloo 2';
     font-size: 24px;
-    font-style: normal;
     font-weight: 800;
     line-height: 130%;
   }
 
   .line-price-quantity {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
+    padding-bottom: 24px;
   }
 
   .quantity-controls {
     display: flex;
     height: 38px;
     padding: 8px;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 4px;
 
     border-radius: 6px;
