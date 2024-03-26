@@ -4,6 +4,8 @@ import Timer from '../../assets/Timer.svg'
 import Embalagens from '../../assets/Embalagens.svg'
 import MiniCoffe from '../../assets/MiniCoffe.svg'
 
+import { CardCoffe } from '../../components/CardCoffe'
+
 import { HomeContainer, Section } from './styles'
 
 export function Home() {
@@ -45,6 +47,8 @@ export function Home() {
       </div>
 
       <h1>Nossos cafés</h1>
+
+      <CardCoffe />
     </HomeContainer>
   )
 }
