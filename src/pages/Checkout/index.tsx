@@ -54,9 +54,21 @@ export function Checkout() {
           </div>
         </div>
         <div className="line-buttons">
-          <ButtonText text="CARTÃO DE CRÉDITO" Icon={CiCreditCard1} />
-          <ButtonText text="CARTÃO DE DÉBITO" Icon={CiCreditCard1} />
-          <ButtonText text="DINHEIRO" Icon={RiMoneyDollarCircleLine} />
+          <ButtonText
+            text="CARTÃO DE CRÉDITO"
+            Icon={CiCreditCard1}
+            iconColor="#8047F8"
+          />
+          <ButtonText
+            text="CARTÃO DE DÉBITO"
+            Icon={CiCreditCard1}
+            iconColor="#8047F8"
+          />
+          <ButtonText
+            text="DINHEIRO"
+            Icon={RiMoneyDollarCircleLine}
+            iconColor="#8047F8"
+          />
         </div>
       </PaymentMethod>
       <Cart></Cart>
