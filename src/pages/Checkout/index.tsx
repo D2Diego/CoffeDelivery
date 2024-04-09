@@ -7,9 +7,11 @@ import {
 
 import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
+import { Counter } from '../../components/Counter'
 
 import { CiCreditCard1, CiLocationOn } from 'react-icons/ci'
 import { RiMoneyDollarCircleLine } from 'react-icons/ri'
+import { GoTrash } from 'react-icons/go'
 
 export function Checkout() {
   return (
@@ -71,7 +73,39 @@ export function Checkout() {
           />
         </div>
       </PaymentMethod>
-      <Cart></Cart>
+
+      <Cart>
+        <div>
+          <img src="" alt="" />
+          <div>
+            <p>Expresso Tradicional</p>
+            <div>
+              <Counter />
+              <button>
+                <GoTrash />
+                Remover
+              </button>
+            </div>
+          </div>
+          <span>R$ 9,90</span>
+        </div>
+
+        <div>
+          <div>
+            <p>Total de itens</p>
+            <span>R$ 29,70</span>
+          </div>
+          <div>
+            <p>Entrega</p>
+            <span> R$ 3,50</span>
+          </div>
+          <div>
+            <h1>Total</h1>
+            <h2>R$ 33,20</h2>
+          </div>
+          <button>Confirma Pedido</button>
+        </div>
+      </Cart>
     </CheckoutContainer>
   )
 }
