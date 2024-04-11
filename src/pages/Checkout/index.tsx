@@ -8,6 +8,7 @@ import {
 import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
 import { Counter } from '../../components/Counter'
+import { Section } from '../../components/Section'
 
 import CupCoffe from '../../assets/CupCoffe.svg'
 
@@ -97,8 +98,27 @@ export function Checkout() {
             </div>
             <span>R$ 9,90</span>
           </div>
+          <Section />
+          <div className="box-product">
+            <div className="box-img-textButtons">
+              <img src={CupCoffe} alt="Imagem do produto selecionado" />
 
+              <div className="box-text-buttons">
+                <p>Expresso Tradicional</p>
+                <div className="box-buttons">
+                  <Counter />
+                  <button>
+                    <GoTrash color="#3d1d81" />
+                    Remover
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span>R$ 9,90</span>
+          </div>
           <div>
+            <Section />
+
             <div>
               <p>Total de itens</p>
               <span>R$ 29,70</span>

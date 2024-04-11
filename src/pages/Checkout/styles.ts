@@ -155,10 +155,4 @@ export const Cart = styled.div`
     font-weight: 700;
     line-height: 130%;
   }
-
-  .bottom-line {
-    border-bottom: 1px solid #e6e5e5;
-    height: 1px;
-    width: 100%;
-  }
 `

@@ -1,5 +1,7 @@
-import { CounterContainer } from './styles'
 import { useState } from 'react'
+import { CounterContainer } from './styles'
+
+import { FaMinus, FaPlus } from 'react-icons/fa'
 
 export function Counter() {
   const [count, setCount] = useState<number>(0)
@@ -13,9 +15,13 @@ export function Counter() {
   }
   return (
     <CounterContainer>
-      <button onClick={decrement}>-</button>
+      <button onClick={decrement}>
+        <FaMinus color="#8047F8" />
+      </button>
       <span> {count} </span>
-      <button onClick={increment}>+</button>
+      <button onClick={increment}>
+        <FaPlus color="#8047F8" />
+      </button>
     </CounterContainer>
   )
 }
