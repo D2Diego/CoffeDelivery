@@ -155,4 +155,39 @@ export const Cart = styled.div`
     font-weight: 700;
     line-height: 130%;
   }
+  .box-price-itens {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    p {
+      color: var(--Base-Text, #574f4d);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .box-price-delivery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    p {
+      color: var(--Base-Text, #574f4d);
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .box-price-total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+
+    strong {
+      color: var(--Base-Subtitle, #403937);
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 130%;
+    }
+  }
 `

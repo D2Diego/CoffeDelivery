@@ -9,6 +9,7 @@ import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
 import { Counter } from '../../components/Counter'
 import { Section } from '../../components/Section'
+import { ButtonConfirmed } from '../../components/ButtonConfirmed'
 
 import CupCoffe from '../../assets/CupCoffe.svg'
 
@@ -78,6 +79,7 @@ export function Checkout() {
           </div>
         </PaymentMethod>
       </div>
+
       <div>
         <h1>Cafés Selecionados</h1>
         <Cart>
@@ -119,19 +121,19 @@ export function Checkout() {
           <div>
             <Section />
 
-            <div>
+            <div className="box-price-itens">
               <p>Total de itens</p>
-              <span>R$ 29,70</span>
+              <p>R$ 29,70</p>
             </div>
-            <div>
+            <div className="box-price-delivery">
               <p>Entrega</p>
-              <span> R$ 3,50</span>
+              <p> R$ 3,50</p>
             </div>
-            <div>
-              <h1>Total</h1>
-              <h2>R$ 33,20</h2>
+            <div className="box-price-total">
+              <strong>Total</strong>
+              <strong>R$ 33,20</strong>
             </div>
-            <button>Confirma Pedido</button>
+            <ButtonConfirmed />
           </div>
         </Cart>
       </div>
