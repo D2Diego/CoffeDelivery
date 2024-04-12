@@ -5,6 +5,8 @@ import {
   Cart,
 } from './styles'
 
+import { z } from 'zod'
+
 import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
 import { Counter } from '../../components/Counter'
@@ -18,6 +20,18 @@ import { RiMoneyDollarCircleLine } from 'react-icons/ri'
 import { GoTrash } from 'react-icons/go'
 
 export function Checkout() {
+  const formularioSchema = z.object({
+    cep: z
+      .string()
+      .length(8, 'CEP deve ter exatamente 8 números.')
+      .regex(/^\d+$/, 'CEP deve conter apenas números.'),
+    rua: z.string(),
+    numero: z.string().regex(/^\d+$/, 'Número deve conter apenas números.'),
+    complemento: z.string().optional(),
+    bairro: z.string(),
+    cidade: z.string(),
+    uf: z.string().length(2, 'UF deve ter exatamente 2 letras.'),
+  })
   return (
     <CheckoutContainer>
       <div>
