@@ -5,8 +5,6 @@ import {
   Cart,
 } from './styles'
 
-import { z } from 'zod'
-
 import { Input } from '../../components/Input'
 import { ButtonText } from '../../components/ButtonText'
 import { Counter } from '../../components/Counter'
@@ -18,25 +16,38 @@ import CupCoffe from '../../assets/CupCoffe.svg'
 import { CiCreditCard1, CiLocationOn } from 'react-icons/ci'
 import { RiMoneyDollarCircleLine } from 'react-icons/ri'
 import { GoTrash } from 'react-icons/go'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import { useForm, SubmitHandler } from 'react-hook-form'
+
+const formularioSchema = z.object({
+  cep: z
+    .string()
+    .length(8, 'CEP deve ter exatamente 8 números.')
+    .regex(/^\d+$/, 'CEP deve conter apenas números.'),
+  rua: z.string(),
+  numero: z.string().regex(/^\d+$/, 'Número deve conter apenas números.'),
+  complemento: z.string().optional(),
+  bairro: z.string(),
+  cidade: z.string(),
+  uf: z.string().length(2, 'UF deve ter exatamente 2 letras.'),
+})
+
+type FormValues = z.infer<typeof formularioSchema>
 
 export function Checkout() {
-  const formularioSchema = z.object({
-    cep: z
-      .string()
-      .length(8, 'CEP deve ter exatamente 8 números.')
-      .regex(/^\d+$/, 'CEP deve conter apenas números.'),
-    rua: z.string(),
-    numero: z.string().regex(/^\d+$/, 'Número deve conter apenas números.'),
-    complemento: z.string().optional(),
-    bairro: z.string(),
-    cidade: z.string(),
-    uf: z.string().length(2, 'UF deve ter exatamente 2 letras.'),
+  const { register, handleSubmit } = useForm<FormValues>({
+    resolver: zodResolver(formularioSchema),
   })
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data)
+  }
   return (
     <CheckoutContainer>
       <div>
         <h1>Complete seu pedido</h1>
-        <FormContainerOrder>
+        <FormContainerOrder onSubmit={handleSubmit(onSubmit)}>
           <div>
             <div className="text-icon-line">
               <CiLocationOn size={22} color="#C47F17" />
@@ -46,16 +57,32 @@ export function Checkout() {
               </div>
             </div>
             <div className="grid-inputs">
-              <Input className="CEP" placeholder="CEP" />
-              <Input className="Rua" placeholder="Rua" />
+              <Input {...register('cep')} className="CEP" placeholder="CEP" />
+              <Input {...register('rua')} className="Rua" placeholder="Rua" />
               <div className="number-complement">
-                <Input className="Numero" placeholder="Número" />
-                <Input className="Complemento" placeholder="Complemento" />
+                <Input
+                  {...register('numero')}
+                  className="Numero"
+                  placeholder="Número"
+                />
+                <Input
+                  {...register('complemento')}
+                  className="Complemento"
+                  placeholder="Complemento"
+                />
               </div>
               <div className="neighborhood-city">
-                <Input className="Bairro" placeholder="Bairro" />
-                <Input className="Cidade" placeholder="Cidade" />
-                <Input className="UF" placeholder="UF" />
+                <Input
+                  {...register('bairro')}
+                  className="Bairro"
+                  placeholder="Bairro"
+                />
+                <Input
+                  {...register('cidade')}
+                  className="Cidade"
+                  placeholder="Cidade"
+                />
+                <Input {...register('uf')} className="UF" placeholder="UF" />
               </div>
             </div>
           </div>
