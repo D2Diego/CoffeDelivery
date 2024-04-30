@@ -36,12 +36,18 @@ const formularioSchema = z.object({
 type FormValues = z.infer<typeof formularioSchema>
 
 export function Checkout() {
-  const { register, handleSubmit } = useForm<FormValues>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
     resolver: zodResolver(formularioSchema),
   })
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log(data)
+    reset()
   }
   return (
     <CheckoutContainer>
