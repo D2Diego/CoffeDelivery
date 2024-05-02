@@ -59,6 +59,11 @@ export const FormContainerOrder = styled.form`
     display: flex;
     gap: 0.75rem;
   }
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
 `
 
 export const PaymentMethod = styled.div`

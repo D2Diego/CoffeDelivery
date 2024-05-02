@@ -64,6 +64,9 @@ export function Checkout() {
             </div>
             <div className="grid-inputs">
               <Input {...register('cep')} className="CEP" placeholder="CEP" />
+              {errors.cep && (
+                <p className="error-message">{errors.cep.message}</p>
+              )}
               <Input {...register('rua')} className="Rua" placeholder="Rua" />
               <div className="number-complement">
                 <Input
@@ -71,11 +74,17 @@ export function Checkout() {
                   className="Numero"
                   placeholder="Número"
                 />
+                {errors.numero && (
+                  <p className="error-message">{errors.numero.message}</p>
+                )}
                 <Input
                   {...register('complemento')}
                   className="Complemento"
                   placeholder="Complemento"
                 />
+                {errors.complemento && (
+                  <p className="error-message">{errors.complemento.message}</p>
+                )}
               </div>
               <div className="neighborhood-city">
                 <Input
@@ -83,12 +92,15 @@ export function Checkout() {
                   className="Bairro"
                   placeholder="Bairro"
                 />
+                {errors.bairro && <p>{errors.bairro.message}</p>}
                 <Input
                   {...register('cidade')}
                   className="Cidade"
                   placeholder="Cidade"
                 />
+                {errors.cidade && <p>{errors.cidade.message}</p>}
                 <Input {...register('uf')} className="UF" placeholder="UF" />
+                {errors.uf && <p>{errors.uf.message}</p>}
               </div>
             </div>
           </div>
